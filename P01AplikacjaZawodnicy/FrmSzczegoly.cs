@@ -14,12 +14,14 @@ namespace P01AplikacjaZawodnicy
     {
         Zawodnik zawodnik;
         ManagerZawodnikow mz;
-        public FrmSzczegoly(Zawodnik zawodnik, ManagerZawodnikow mz)
+        FrmZawodnicy frmZawodnicy;
+        public FrmSzczegoly(Zawodnik zawodnik, ManagerZawodnikow mz, FrmZawodnicy frmZawodnicy)
         {
             InitializeComponent();
 
             this.mz = mz;
             this.zawodnik = zawodnik;
+            this.frmZawodnicy = frmZawodnicy;
 
             txtImie.Text = zawodnik.Imie;
             txtNazwisko.Text = zawodnik.Nazwisko;
@@ -40,7 +42,8 @@ namespace P01AplikacjaZawodnicy
             zawodnik.Wzrost = Convert.ToInt32(numWzrost.Value);
 
             mz.Edytuj(zawodnik);
-            
+            frmZawodnicy.Odswiez();
+
         }
     }
 }

@@ -25,7 +25,7 @@ namespace P01AplikacjaZawodnicy
             Odswiez();
         }
 
-        private void Odswiez()
+        public void Odswiez()
         {
             mz.WczytajZawodnikow();
             // tutaj chce miec tych zawodnikach
@@ -97,7 +97,7 @@ namespace P01AplikacjaZawodnicy
         {     
             Zawodnik zaznaczony = (Zawodnik)lbDane.SelectedItem;
 
-            FrmSzczegoly frmSzczegoly = new FrmSzczegoly(zaznaczony,mz);
+            FrmSzczegoly frmSzczegoly = new FrmSzczegoly(zaznaczony,mz,this);
             frmSzczegoly.Show();
         }
     }
