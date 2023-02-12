@@ -219,7 +219,7 @@ namespace P01AplikacjaZawodnicy
         {
             string sql = $"delete zawodnicy where id_zawodnika = {id}";
 
-            PolaczenieZBaza pzb = new PolaczenieZBaza(connString);
+          //  PolaczenieZBaza pzb = new PolaczenieZBaza(connString);
             pzb.WykonajZapytanie(sql);
         }
 
