@@ -50,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmSzczegoly.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSzczegoly.Designer.cs">
+      <DependentUpon>FrmSzczegoly.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmZawodnicy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,9 @@
     <Compile Include="ManagerMiast.cs" />
     <Compile Include="Miasto.cs" />
     <Compile Include="Zawodnik.cs" />
+    <EmbeddedResource Include="FrmSzczegoly.resx">
+      <DependentUpon>FrmSzczegoly.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmZawodnicy.resx">
       <DependentUpon>FrmZawodnicy.cs</DependentUpon>
     </EmbeddedResource>

@@ -13,12 +13,12 @@ using System.Windows.Forms.VisualStyles;
 
 namespace P01AplikacjaZawodnicy
 {
-    enum SposobPolaczenia
+    public enum SposobPolaczenia
     {
         BazaDanych,
         Plik
     }
-    internal class ManagerZawodnikow
+    public class ManagerZawodnikow
     {
         private string url;
         private string connString;
@@ -215,6 +215,26 @@ namespace P01AplikacjaZawodnicy
         public void Usun(int id)
         {
             string sql = $"delete zawodnicy where id_zawodnika = {id}";
+
+            PolaczenieZBaza pzb = new PolaczenieZBaza(connString);
+            pzb.WykonajZapytanie(sql);
+        }
+
+        public void Edytuj(Zawodnik z)
+        {
+            string szablon = @"update zawodnicy set
+                            imie = '{0}',
+                            nazwisko = '{1}',
+                            kraj = '{2}', 
+                            data_ur = '{3}', 
+                            waga = {4}, 
+                            wzrost = {5}
+                            where id_zawodnika = {6}";
+
+            string sql = string.Format(szablon,
+                        z.Imie, z.Nazwisko, z.Kraj,
+                        z.DataUrodzenia.ToString("yyyyMMdd"), 
+                        z.Waga, z.Wzrost, z.Id_zawodnika);
 
             PolaczenieZBaza pzb = new PolaczenieZBaza(connString);
             pzb.WykonajZapytanie(sql);

@@ -92,5 +92,13 @@ namespace P01AplikacjaZawodnicy
             mz.Usun(zaznaczony.Id_zawodnika);
             Odswiez();
         }
+
+        private void btnEdytuj_Click(object sender, EventArgs e)
+        {     
+            Zawodnik zaznaczony = (Zawodnik)lbDane.SelectedItem;
+
+            FrmSzczegoly frmSzczegoly = new FrmSzczegoly(zaznaczony,mz);
+            frmSzczegoly.Show();
+        }
     }
 }
