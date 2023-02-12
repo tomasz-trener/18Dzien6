@@ -32,18 +32,33 @@ namespace P01AplikacjaZawodnicy
             numWzrost.Value = zawodnik.Wzrost;
         }
 
-        private void btnZapisz_Click(object sender, EventArgs e)
+        private void btnZapisz_Click(object sender, EventArgs e) 
         {
-            zawodnik.Imie = txtImie.Text;
-            zawodnik.Nazwisko = txtNazwisko.Text;
-            zawodnik.Kraj = txtKraj.Text;
-            zawodnik.DataUrodzenia = dtpDataUr.Value;
-            zawodnik.Waga = Convert.ToInt32(numWaga.Value);
-            zawodnik.Wzrost = Convert.ToInt32(numWzrost.Value);
+            DialogResult dr=
+                MessageBox.Show("Czy napewno chcesz zapisac zmiany? ", "Pytanie",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            mz.Edytuj(zawodnik);
-            frmZawodnicy.Odswiez();
+            if (dr == DialogResult.Yes)
+            {
+                zawodnik.Imie = txtImie.Text;
+                zawodnik.Nazwisko = txtNazwisko.Text;
+                zawodnik.Kraj = txtKraj.Text;
+                zawodnik.DataUrodzenia = dtpDataUr.Value;
+                zawodnik.Waga = Convert.ToInt32(numWaga.Value);
+                zawodnik.Wzrost = Convert.ToInt32(numWzrost.Value);
 
+                mz.Edytuj(zawodnik);
+                frmZawodnicy.Odswiez();
+                this.Close();
+            }
+
+            
+
+        }
+
+        private void btnAnuluj_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

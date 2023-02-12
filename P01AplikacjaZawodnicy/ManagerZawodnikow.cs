@@ -239,5 +239,16 @@ namespace P01AplikacjaZawodnicy
             PolaczenieZBaza pzb = new PolaczenieZBaza(connString);
             pzb.WykonajZapytanie(sql);
         }
+
+        public void Dodaj(Zawodnik z)
+        {
+            string szablon = "insert into zawodnicy values ({0},'{1}','{2}','{3}','{4}',{5},{6})";
+
+            string sql = string.Format(szablon, z.Id_trenera, z.Imie, z.Nazwisko,
+                    z.Kraj, z.DataUrodzenia.ToString("yyyyMMdd"), z.Waga, z.Wzrost);
+
+            PolaczenieZBaza pzb = new PolaczenieZBaza(connString);
+            pzb.WykonajZapytanie(sql);
+        }
     }
 }

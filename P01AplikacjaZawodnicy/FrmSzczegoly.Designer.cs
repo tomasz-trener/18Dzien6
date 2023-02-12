@@ -41,6 +41,7 @@
             this.dtpDataUr = new System.Windows.Forms.DateTimePicker();
             this.numWaga = new System.Windows.Forms.NumericUpDown();
             this.numWzrost = new System.Windows.Forms.NumericUpDown();
+            this.btnAnuluj = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numWaga)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numWzrost)).BeginInit();
             this.SuspendLayout();
@@ -162,11 +163,22 @@
             this.numWzrost.Size = new System.Drawing.Size(217, 20);
             this.numWzrost.TabIndex = 15;
             // 
+            // btnAnuluj
+            // 
+            this.btnAnuluj.Location = new System.Drawing.Point(12, 292);
+            this.btnAnuluj.Name = "btnAnuluj";
+            this.btnAnuluj.Size = new System.Drawing.Size(75, 23);
+            this.btnAnuluj.TabIndex = 16;
+            this.btnAnuluj.Text = "Anuluj";
+            this.btnAnuluj.UseVisualStyleBackColor = true;
+            this.btnAnuluj.Click += new System.EventHandler(this.btnAnuluj_Click);
+            // 
             // FrmSzczegoly
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(244, 324);
+            this.Controls.Add(this.btnAnuluj);
             this.Controls.Add(this.numWzrost);
             this.Controls.Add(this.numWaga);
             this.Controls.Add(this.dtpDataUr);
@@ -204,5 +216,6 @@
         private System.Windows.Forms.DateTimePicker dtpDataUr;
         private System.Windows.Forms.NumericUpDown numWaga;
         private System.Windows.Forms.NumericUpDown numWzrost;
+        private System.Windows.Forms.Button btnAnuluj;
     }
 }

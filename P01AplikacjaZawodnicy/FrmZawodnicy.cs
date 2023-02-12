@@ -99,6 +99,7 @@ namespace P01AplikacjaZawodnicy
 
             FrmSzczegoly frmSzczegoly = new FrmSzczegoly(zaznaczony,mz,this);
             frmSzczegoly.Show();
+            
         }
     }
 }

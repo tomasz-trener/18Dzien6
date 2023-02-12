@@ -143,6 +143,7 @@
             this.btnDodaj.TabIndex = 9;
             this.btnDodaj.Text = "Dodaj";
             this.btnDodaj.UseVisualStyleBackColor = true;
+            this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
             // 
             // btnEdytuj
             // 
