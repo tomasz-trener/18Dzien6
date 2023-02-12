@@ -234,7 +234,7 @@ namespace P01AplikacjaZawodnicy
                             wzrost = {5}
                             where id_zawodnika = {6}";
 
-            string sql = string.Format(szablon,
+            string sql = string.Format(szablon, 
                         z.Imie, z.Nazwisko, z.Kraj,
                         z.DataUrodzenia.ToString("yyyyMMdd"), 
                         z.Waga, z.Wzrost, z.Id_zawodnika);
@@ -247,8 +247,8 @@ namespace P01AplikacjaZawodnicy
         {
             string szablon = "insert into zawodnicy values ({0},'{1}','{2}','{3}','{4}',{5},{6})";
 
-            string sql = string.Format(szablon, z.Id_trenera, z.Imie, z.Nazwisko,
-                    z.Kraj, z.DataUrodzenia.ToString("yyyyMMdd"), z.Waga, z.Wzrost);
+            string sql = string.Format(szablon, "null", z.Imie, z.Nazwisko,
+                    z.Kraj, z.DataUrodzenia.ToString("yyyyMMdd"), z.Wzrost, z.Waga);
 
             //PolaczenieZBaza pzb = new PolaczenieZBaza();
             pzb.WykonajZapytanie(sql);

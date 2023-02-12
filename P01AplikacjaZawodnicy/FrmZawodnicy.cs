@@ -104,7 +104,8 @@ namespace P01AplikacjaZawodnicy
 
         private void btnDodaj_Click(object sender, EventArgs e)
         {
-
+            FrmSzczegoly frmSzczegoly = new FrmSzczegoly(mz, this);
+            frmSzczegoly.Show();
         }
     }
 }

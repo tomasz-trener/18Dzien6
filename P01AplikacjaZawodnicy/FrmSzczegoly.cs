@@ -15,6 +15,14 @@ namespace P01AplikacjaZawodnicy
         Zawodnik zawodnik;
         ManagerZawodnikow mz;
         FrmZawodnicy frmZawodnicy;
+
+        public FrmSzczegoly(ManagerZawodnikow mz, FrmZawodnicy frmZawodnicy)
+        {
+            InitializeComponent();
+            this.mz = mz;
+            this.frmZawodnicy = frmZawodnicy;
+        }
+
         public FrmSzczegoly(Zawodnik zawodnik, ManagerZawodnikow mz, FrmZawodnicy frmZawodnicy)
         {
             InitializeComponent();
@@ -40,20 +48,36 @@ namespace P01AplikacjaZawodnicy
 
             if (dr == DialogResult.Yes)
             {
-                zawodnik.Imie = txtImie.Text;
-                zawodnik.Nazwisko = txtNazwisko.Text;
-                zawodnik.Kraj = txtKraj.Text;
-                zawodnik.DataUrodzenia = dtpDataUr.Value;
-                zawodnik.Waga = Convert.ToInt32(numWaga.Value);
-                zawodnik.Wzrost = Convert.ToInt32(numWzrost.Value);
 
-                mz.Edytuj(zawodnik);
+                if (zawodnik == null) // tryb dodawania
+                {
+                    zawodnik = new Zawodnik();
+                    ZczytajDane();
+                    mz.Dodaj(zawodnik);
+                }
+                else // tryb edycji 
+                {
+                    ZczytajDane();
+                    mz.Edytuj(zawodnik);
+                }
+                
+              
                 frmZawodnicy.Odswiez();
                 this.Close();
             }
 
-            
 
+
+        }
+
+        private void ZczytajDane()
+        {
+            zawodnik.Imie = txtImie.Text;
+            zawodnik.Nazwisko = txtNazwisko.Text;
+            zawodnik.Kraj = txtKraj.Text;
+            zawodnik.DataUrodzenia = dtpDataUr.Value;
+            zawodnik.Waga = Convert.ToInt32(numWaga.Value);
+            zawodnik.Wzrost = Convert.ToInt32(numWzrost.Value);
         }
 
         private void btnAnuluj_Click(object sender, EventArgs e)
