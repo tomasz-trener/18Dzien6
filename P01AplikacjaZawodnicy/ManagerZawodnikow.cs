@@ -26,6 +26,7 @@ namespace P01AplikacjaZawodnicy
         private const string naglowek = "id_zawodnika;id_trenera;imie;nazwisko;kraj;data urodzenia;wzrost;waga";
         Zawodnik[] zawodnicyKraju;
         SposobPolaczenia sposobPolaczenia;
+        PolaczenieZBaza pzb;
 
         /// <summary>
         /// Tworzy nowy menager zawodników zgodnie z wybranym sposoblem połączenia
@@ -42,6 +43,8 @@ namespace P01AplikacjaZawodnicy
                     connString = parametrPolaczenia;
             else
                 throw new Exception("nieznany sposób polaczenia");
+
+            pzb = new PolaczenieZBaza(connString);
         }
 
         public Zawodnik[] TablicaZawodnikow
@@ -67,7 +70,7 @@ namespace P01AplikacjaZawodnicy
 
         private void wczytajZawodnikowZBazy()
         {
-            PolaczenieZBaza pzb = new PolaczenieZBaza(connString);
+            
             object[][] wynik = pzb.WykonajZapytanie("select * from zawodnicy");
 
             Zawodnik[] tab = new Zawodnik[wynik.Length];
@@ -236,7 +239,7 @@ namespace P01AplikacjaZawodnicy
                         z.DataUrodzenia.ToString("yyyyMMdd"), 
                         z.Waga, z.Wzrost, z.Id_zawodnika);
 
-            PolaczenieZBaza pzb = new PolaczenieZBaza(connString);
+            
             pzb.WykonajZapytanie(sql);
         }
 
@@ -247,7 +250,7 @@ namespace P01AplikacjaZawodnicy
             string sql = string.Format(szablon, z.Id_trenera, z.Imie, z.Nazwisko,
                     z.Kraj, z.DataUrodzenia.ToString("yyyyMMdd"), z.Waga, z.Wzrost);
 
-            PolaczenieZBaza pzb = new PolaczenieZBaza(connString);
+            //PolaczenieZBaza pzb = new PolaczenieZBaza();
             pzb.WykonajZapytanie(sql);
         }
     }
