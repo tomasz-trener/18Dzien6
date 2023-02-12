@@ -157,8 +157,6 @@ namespace P01AplikacjaZawodnicy
             }
             tablicaKrajow= kraje.ToArray();
 
-
-
             List<GrupaKraju> grupy = new List<GrupaKraju>();
             for (int i = 0; i < tablicaKrajow.Length; i++)
             {
