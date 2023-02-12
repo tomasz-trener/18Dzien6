@@ -15,7 +15,7 @@ namespace P01AplikacjaZawodnicy
         ManagerZawodnikow mz;
         public FrmZawodnicy()
         {
-            InitializeComponent();
+            InitializeComponent(); 
         }
 
         private void btnWczytaj_Click(object sender, EventArgs e)
