@@ -1,4 +1,5 @@
 ﻿using P01AplikacjaZawodnicy.Properties;
+using P04ZadaniePogoda;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -52,8 +53,13 @@ namespace P01AplikacjaZawodnicy
 
         private void lbDane_SelectedIndexChanged(object sender, EventArgs e)
         {
-              Miasto zaznaczone = (Miasto)lbDane.SelectedItem;
-              txtNazwaMiasta.Text = zaznaczone.Nazwa;
+            Miasto zaznaczone = (Miasto)lbDane.SelectedItem;
+            txtNazwaMiasta.Text = zaznaczone.Nazwa;
+
+            ManagerPogody mp = new ManagerPogody();
+            mp.Jednostka = 'c';
+
+            txtTemperatura.Text = Convert.ToString(mp.PodajTemperature(zaznaczone.Nazwa));
         }
 
         private void btnDodaj_Click(object sender, EventArgs e)

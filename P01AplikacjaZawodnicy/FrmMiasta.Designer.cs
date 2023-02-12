@@ -34,6 +34,8 @@
             this.btnDodaj = new System.Windows.Forms.Button();
             this.btnUsun = new System.Windows.Forms.Button();
             this.btnEdytuj = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtTemperatura = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lbDane
@@ -91,11 +93,30 @@
             this.btnEdytuj.UseVisualStyleBackColor = true;
             this.btnEdytuj.Click += new System.EventHandler(this.btnEdytuj_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(227, 117);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(91, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Aktualna pogoda:";
+            // 
+            // txtTemperatura
+            // 
+            this.txtTemperatura.Location = new System.Drawing.Point(324, 114);
+            this.txtTemperatura.Name = "txtTemperatura";
+            this.txtTemperatura.ReadOnly = true;
+            this.txtTemperatura.Size = new System.Drawing.Size(43, 20);
+            this.txtTemperatura.TabIndex = 7;
+            // 
             // FrmMiasta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(392, 195);
+            this.Controls.Add(this.txtTemperatura);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnEdytuj);
             this.Controls.Add(this.btnUsun);
             this.Controls.Add(this.btnDodaj);
@@ -117,5 +138,7 @@
         private System.Windows.Forms.Button btnDodaj;
         private System.Windows.Forms.Button btnUsun;
         private System.Windows.Forms.Button btnEdytuj;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtTemperatura;
     }
 }

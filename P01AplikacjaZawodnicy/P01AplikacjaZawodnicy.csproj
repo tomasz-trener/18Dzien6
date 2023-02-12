@@ -75,6 +75,7 @@
       <DependentUpon>FrmMiasta.cs</DependentUpon>
     </Compile>
     <Compile Include="GrupaKraju.cs" />
+    <Compile Include="ManagerPogody.cs" />
     <Compile Include="ManagerZawodnikow.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
