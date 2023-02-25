@@ -19,14 +19,17 @@ namespace P01AplikacjaZawodnicy
         public FrmSzczegoly(ManagerZawodnikow mz, FrmZawodnicy frmZawodnicy)
         {
             InitializeComponent();
+            dodajZdarzeniaDoTextboxow();
             this.mz = mz;
             this.frmZawodnicy = frmZawodnicy;
+
+           // string conn = frmZawodnicy.TxtParamPolaczenia.Text;
         }
 
         public FrmSzczegoly(Zawodnik zawodnik, ManagerZawodnikow mz, FrmZawodnicy frmZawodnicy)
         {
             InitializeComponent();
-
+            dodajZdarzeniaDoTextboxow();
             this.mz = mz;
             this.zawodnik = zawodnik;
             this.frmZawodnicy = frmZawodnicy;
@@ -38,6 +41,33 @@ namespace P01AplikacjaZawodnicy
             dtpDataUr.Value = zawodnik.DataUrodzenia;
             numWaga.Value = zawodnik.Waga;
             numWzrost.Value = zawodnik.Wzrost;
+        }
+
+        private void dodajZdarzeniaDoTextboxow()
+        {
+            foreach (var item in pnlPolaZawodnika.Controls)
+            {
+                if (item is TextBox)
+                {
+                    ((TextBox)item).TextChanged += new EventHandler(txtTextChange);
+                }
+            }
+        }
+
+        // walidacja textboxow 
+        private void txtTextChange(object sender, EventArgs e)
+        {
+            btnZapisz.Enabled = true;
+            foreach (var item in pnlPolaZawodnika.Controls)
+            {
+                if (item is TextBox)
+                {
+                    if (string.IsNullOrWhiteSpace(((TextBox)item).Text))
+                    {
+                        btnZapisz.Enabled = false;
+                    }
+                }
+            }
         }
 
         private void btnZapisz_Click(object sender, EventArgs e) 
@@ -84,5 +114,7 @@ namespace P01AplikacjaZawodnicy
         {
             Close();
         }
+
+       
     }
 }

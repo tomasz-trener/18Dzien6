@@ -13,6 +13,15 @@ namespace P01AplikacjaZawodnicy
     public partial class FrmZawodnicy : Form
     {
         ManagerZawodnikow mz;
+
+        public TextBox TxtParamPolaczenia 
+        { 
+            get
+            {
+                return txtParamPolaczenia;
+            } 
+        }
+
         public FrmZawodnicy()
         {
             InitializeComponent(); 

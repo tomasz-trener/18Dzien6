@@ -42,14 +42,17 @@
             this.numWaga = new System.Windows.Forms.NumericUpDown();
             this.numWzrost = new System.Windows.Forms.NumericUpDown();
             this.btnAnuluj = new System.Windows.Forms.Button();
+            this.pnlPolaZawodnika = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numWaga)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numWzrost)).BeginInit();
+            this.pnlPolaZawodnika.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 18);
+            this.label1.Location = new System.Drawing.Point(9, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(26, 13);
             this.label1.TabIndex = 0;
@@ -57,14 +60,14 @@
             // 
             // txtImie
             // 
-            this.txtImie.Location = new System.Drawing.Point(12, 34);
+            this.txtImie.Location = new System.Drawing.Point(12, 25);
             this.txtImie.Name = "txtImie";
             this.txtImie.Size = new System.Drawing.Size(217, 20);
             this.txtImie.TabIndex = 1;
             // 
             // txtNazwisko
             // 
-            this.txtNazwisko.Location = new System.Drawing.Point(12, 79);
+            this.txtNazwisko.Location = new System.Drawing.Point(12, 70);
             this.txtNazwisko.Name = "txtNazwisko";
             this.txtNazwisko.Size = new System.Drawing.Size(217, 20);
             this.txtNazwisko.TabIndex = 3;
@@ -72,7 +75,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 63);
+            this.label2.Location = new System.Drawing.Point(9, 54);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 2;
@@ -80,7 +83,7 @@
             // 
             // txtKraj
             // 
-            this.txtKraj.Location = new System.Drawing.Point(12, 126);
+            this.txtKraj.Location = new System.Drawing.Point(12, 117);
             this.txtKraj.Name = "txtKraj";
             this.txtKraj.Size = new System.Drawing.Size(217, 20);
             this.txtKraj.TabIndex = 5;
@@ -88,7 +91,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 110);
+            this.label3.Location = new System.Drawing.Point(9, 101);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(25, 13);
             this.label3.TabIndex = 4;
@@ -97,7 +100,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 155);
+            this.label4.Location = new System.Drawing.Point(9, 146);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(79, 13);
             this.label4.TabIndex = 6;
@@ -106,7 +109,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(9, 203);
+            this.label5.Location = new System.Drawing.Point(9, 194);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(36, 13);
             this.label5.TabIndex = 8;
@@ -115,7 +118,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(9, 249);
+            this.label6.Location = new System.Drawing.Point(9, 240);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(40, 13);
             this.label6.TabIndex = 10;
@@ -123,7 +126,8 @@
             // 
             // btnZapisz
             // 
-            this.btnZapisz.Location = new System.Drawing.Point(146, 291);
+            this.btnZapisz.Enabled = false;
+            this.btnZapisz.Location = new System.Drawing.Point(148, 342);
             this.btnZapisz.Name = "btnZapisz";
             this.btnZapisz.Size = new System.Drawing.Size(83, 24);
             this.btnZapisz.TabIndex = 12;
@@ -134,14 +138,14 @@
             // dtpDataUr
             // 
             this.dtpDataUr.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDataUr.Location = new System.Drawing.Point(12, 171);
+            this.dtpDataUr.Location = new System.Drawing.Point(12, 162);
             this.dtpDataUr.Name = "dtpDataUr";
             this.dtpDataUr.Size = new System.Drawing.Size(217, 20);
             this.dtpDataUr.TabIndex = 13;
             // 
             // numWaga
             // 
-            this.numWaga.Location = new System.Drawing.Point(12, 219);
+            this.numWaga.Location = new System.Drawing.Point(12, 210);
             this.numWaga.Maximum = new decimal(new int[] {
             200,
             0,
@@ -153,7 +157,7 @@
             // 
             // numWzrost
             // 
-            this.numWzrost.Location = new System.Drawing.Point(12, 265);
+            this.numWzrost.Location = new System.Drawing.Point(12, 256);
             this.numWzrost.Maximum = new decimal(new int[] {
             300,
             0,
@@ -165,7 +169,7 @@
             // 
             // btnAnuluj
             // 
-            this.btnAnuluj.Location = new System.Drawing.Point(12, 292);
+            this.btnAnuluj.Location = new System.Drawing.Point(15, 342);
             this.btnAnuluj.Name = "btnAnuluj";
             this.btnAnuluj.Size = new System.Drawing.Size(75, 23);
             this.btnAnuluj.TabIndex = 16;
@@ -173,31 +177,48 @@
             this.btnAnuluj.UseVisualStyleBackColor = true;
             this.btnAnuluj.Click += new System.EventHandler(this.btnAnuluj_Click);
             // 
+            // pnlPolaZawodnika
+            // 
+            this.pnlPolaZawodnika.Controls.Add(this.textBox1);
+            this.pnlPolaZawodnika.Controls.Add(this.txtKraj);
+            this.pnlPolaZawodnika.Controls.Add(this.label1);
+            this.pnlPolaZawodnika.Controls.Add(this.numWzrost);
+            this.pnlPolaZawodnika.Controls.Add(this.txtImie);
+            this.pnlPolaZawodnika.Controls.Add(this.numWaga);
+            this.pnlPolaZawodnika.Controls.Add(this.label2);
+            this.pnlPolaZawodnika.Controls.Add(this.dtpDataUr);
+            this.pnlPolaZawodnika.Controls.Add(this.txtNazwisko);
+            this.pnlPolaZawodnika.Controls.Add(this.label3);
+            this.pnlPolaZawodnika.Controls.Add(this.label6);
+            this.pnlPolaZawodnika.Controls.Add(this.label4);
+            this.pnlPolaZawodnika.Controls.Add(this.label5);
+            this.pnlPolaZawodnika.Location = new System.Drawing.Point(12, 12);
+            this.pnlPolaZawodnika.Name = "pnlPolaZawodnika";
+            this.pnlPolaZawodnika.Size = new System.Drawing.Size(246, 324);
+            this.pnlPolaZawodnika.TabIndex = 17;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(129, 291);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 16;
+            // 
             // FrmSzczegoly
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(244, 324);
+            this.ClientSize = new System.Drawing.Size(278, 381);
+            this.Controls.Add(this.pnlPolaZawodnika);
             this.Controls.Add(this.btnAnuluj);
-            this.Controls.Add(this.numWzrost);
-            this.Controls.Add(this.numWaga);
-            this.Controls.Add(this.dtpDataUr);
             this.Controls.Add(this.btnZapisz);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtKraj);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtNazwisko);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtImie);
-            this.Controls.Add(this.label1);
             this.Name = "FrmSzczegoly";
             this.Text = "FrmSzczegoly";
             ((System.ComponentModel.ISupportInitialize)(this.numWaga)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numWzrost)).EndInit();
+            this.pnlPolaZawodnika.ResumeLayout(false);
+            this.pnlPolaZawodnika.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -217,5 +238,7 @@
         private System.Windows.Forms.NumericUpDown numWaga;
         private System.Windows.Forms.NumericUpDown numWzrost;
         private System.Windows.Forms.Button btnAnuluj;
+        private System.Windows.Forms.Panel pnlPolaZawodnika;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
